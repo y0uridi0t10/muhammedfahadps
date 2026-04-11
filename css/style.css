@@ -388,8 +388,7 @@ body.cursor-click #cursor-dot {
 .hero-h1 .line { overflow: hidden; display: block; }
 /* Split char animation */
 .char {
-  opacity: 1;
-  transform: none;
+  display: inline-block;
 }
 .typewriter-wrap {
   height: 2.8rem;
