@@ -236,9 +236,18 @@ document.querySelectorAll('.project-card').forEach(card => {
     // Char split animation for heading
     const h1 = document.querySelector('.hero-h1');
     if (h1) {
-      h1.querySelectorAll('.char').forEach((char, i) => {
-        tl.to(char, { y: 0, opacity: 1, duration: 0.06, ease: 'power2.out' }, 0.1 + i * 0.018);
-      });
+      tl.fromTo(
+        '.char',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.02
+        },
+        0.1
+      );
     }
 
     tl.to('.hero-desc', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0.9)

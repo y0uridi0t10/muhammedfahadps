@@ -351,8 +351,8 @@ body.cursor-click #cursor-dot {
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px);
+  gap: 60px;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -381,17 +381,16 @@ body.cursor-click #cursor-dot {
   letter-spacing: -0.03em;
   color: #fff;
   margin-bottom: 14px;
-  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 .hero-h1 .accent { color: var(--orange); }
 .hero-h1 .line { overflow: hidden; display: block; }
 /* Split char animation */
 .char {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
+  opacity: 1;
+  transform: none;
 }
-
 .typewriter-wrap {
   height: 2.8rem;
   overflow: hidden;
