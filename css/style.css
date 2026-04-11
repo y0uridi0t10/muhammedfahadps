@@ -1277,3 +1277,23 @@ footer {
   #cursor-dot, #cursor-ring { display: none !important; }
   body { cursor: auto !important; }
 }
+
+
+@media (max-width: 768px) {
+  #home {
+    padding: 90px 20px 60px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-image-wrap {
+    transform: scale(0.9);
+  }
+}
