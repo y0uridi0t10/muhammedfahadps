@@ -3,7 +3,6 @@
    Full GSAP + ScrollTrigger animations
    ============================================= */
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── GSAP REGISTRATION ────────────────────────
@@ -37,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (preloaderBar) preloaderBar.style.width = progress + '%';
     }
   }, 60);
-
-  if (window.innerWidth < 768) {
-  gsap.globalTimeline.timeScale(0.6);
-}
 
   // ── CUSTOM CURSOR ─────────────────────────────
   const cursorDot = document.getElementById('cursor-dot');
@@ -140,39 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(spawnParticle, 3500);
 
   // ── SMOOTH SCROLL ─────────────────────────────
- const isMobile = window.innerWidth < 768;
-
-document.querySelectorAll('.project-card').forEach(card => {
-
-  if (!isMobile) {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const rx = (e.clientY - cy) / rect.height * -12;
-      const ry = (e.clientX - cx) / rect.width * 12;
-
-      gsap.to(card, {
-        rotationX: rx,
-        rotationY: ry,
-        duration: 0.4,
-        ease: 'power2.out',
-        transformPerspective: 800
-      });
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        gsap.to(window, {
+          duration: 1.2,
+          scrollTo: { y: target, offsetY: 80 },
+          ease: 'power3.inOut'
+        });
+      }
     });
-
-    card.addEventListener('mouseleave', () => {
-      gsap.to(card, {
-        rotationX: 0,
-        rotationY: 0,
-        duration: 0.6,
-        ease: 'elastic.out(1,0.6)',
-        transformPerspective: 800
-      });
-    });
-  }
-
-});
+  });
 
   // ── MAGNETIC BUTTONS ─────────────────────────
   document.querySelectorAll('.magnetic').forEach(el => {
@@ -236,18 +211,9 @@ document.querySelectorAll('.project-card').forEach(card => {
     // Char split animation for heading
     const h1 = document.querySelector('.hero-h1');
     if (h1) {
-      tl.fromTo(
-        '.char',
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.02
-        },
-        0.1
-      );
+      h1.querySelectorAll('.char').forEach((char, i) => {
+        tl.to(char, { y: 0, opacity: 1, duration: 0.06, ease: 'power2.out' }, 0.1 + i * 0.018);
+      });
     }
 
     tl.to('.hero-desc', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0.9)
@@ -476,10 +442,4 @@ document.querySelectorAll('.project-card').forEach(card => {
     }
   );
 
-});
-
-
-
-
-
-// end DOMContentLoaded
+}); // end DOMContentLoaded
