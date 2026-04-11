@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 60);
 
+  if (window.innerWidth < 768) {
+  gsap.globalTimeline.timeScale(0.6);
+}
+
   // ── CUSTOM CURSOR ─────────────────────────────
   const cursorDot = document.getElementById('cursor-dot');
   const cursorRing = document.getElementById('cursor-ring');
