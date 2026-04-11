@@ -4,6 +4,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 /* ---- CSS Variables ---- */
 :root {
   --orange: #FF6B00;
@@ -45,6 +55,11 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 24px;
+}
+.hero-inner,
+.hero-image-wrap,
+.hero-img-outer {
+  max-width: 100%;
 }
 .preloader-logo {
   font-family: 'Syne', sans-serif;
@@ -1298,22 +1313,18 @@ html, body {
 /* mobile */
 @media (max-width: 768px) {
 
-  section {
-    padding: 80px 20px;
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-grid-bg {
+    display: none;
   }
 
-  .projects-grid,
-  .achievements-grid,
-  .cert-grid {
-    grid-template-columns: 1fr;
+  #cursor-dot,
+  #cursor-ring {
+    display: none !important;
   }
 
-  .hero-h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-img-outer {
-    width: 260px;
-    height: 260px;
+  body {
+    cursor: auto !important;
   }
 }

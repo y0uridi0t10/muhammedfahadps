@@ -140,19 +140,39 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(spawnParticle, 3500);
 
   // ── SMOOTH SCROLL ─────────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        gsap.to(window, {
-          duration: 1.2,
-          scrollTo: { y: target, offsetY: 80 },
-          ease: 'power3.inOut'
-        });
-      }
+ const isMobile = window.innerWidth < 768;
+
+document.querySelectorAll('.project-card').forEach(card => {
+
+  if (!isMobile) {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const rx = (e.clientY - cy) / rect.height * -12;
+      const ry = (e.clientX - cx) / rect.width * 12;
+
+      gsap.to(card, {
+        rotationX: rx,
+        rotationY: ry,
+        duration: 0.4,
+        ease: 'power2.out',
+        transformPerspective: 800
+      });
     });
-  });
+
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        rotationX: 0,
+        rotationY: 0,
+        duration: 0.6,
+        ease: 'elastic.out(1,0.6)',
+        transformPerspective: 800
+      });
+    });
+  }
+
+});
 
   // ── MAGNETIC BUTTONS ─────────────────────────
   document.querySelectorAll('.magnetic').forEach(el => {
@@ -447,4 +467,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
-}); // end DOMContentLoaded
+});
+
+
+
+
+
+// end DOMContentLoaded
