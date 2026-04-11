@@ -625,8 +625,14 @@ body.cursor-click #cursor-dot {
 /* =============================================
    SECTIONS COMMON
    ============================================= */
-section { padding: 110px 48px; position: relative; overflow: hidden; }
-.container { max-width: 1200px; margin: 0 auto; }
+section {
+  padding: clamp(70px, 10vw, 110px) 20px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.container { max-width: 1200px; margin: 0 auto; width: 100%;
+  padding: 0;}
 .section-label {
   display: inline-flex;
   align-items: center;
@@ -1310,19 +1316,26 @@ html, body {
 
 /* mobile */
 @media (max-width: 768px) {
-
-  .hero-orb-1,
-  .hero-orb-2,
-  .hero-grid-bg {
-    display: none;
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    overflow-x: hidden;
   }
 
-  #cursor-dot,
-  #cursor-ring {
-    display: none !important;
+  .hero-image-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: none !important;
   }
 
-  body {
-    cursor: auto !important;
+  .hero-img-outer {
+    width: min(260px, 70vw);
+    height: min(260px, 70vw);
   }
+}
+
+
+* {
+  max-width: 100vw;
 }
