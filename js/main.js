@@ -4,6 +4,7 @@
    ============================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   // ── GSAP REGISTRATION ────────────────────────
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -242,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { opacity: 0, y: 40 },
       {
         opacity: 1, y: 0,
-        duration: 0.85,
+        duration: isMobile ? 0.5 : 0.85,
         ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
       }
@@ -325,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       opacity: 1, y: 0, rotationX: 0,
       duration: 0.75,
-      stagger: 0.12,
+      stagger: isMobile ? 0.06 : 0.12,
       ease: 'power3.out',
       scrollTrigger: { trigger: '.projects-grid', start: 'top 85%', toggleActions: 'play none none none' }
     }
