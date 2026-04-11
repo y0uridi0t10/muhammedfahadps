@@ -1262,38 +1262,95 @@ footer {
   .achievements-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
 }
-@media (max-width: 768px) {
-  section { padding: 80px 24px; }
-  #home { padding: 100px 24px 80px; }
-  #navbar { padding: 16px 24px; }
-  #navbar.scrolled { padding: 12px 24px; }
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .hero-img-outer { width: 260px; height: 260px; }
-  .cert-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .achievements-grid { grid-template-columns: 1fr; }
-  footer { padding: 36px 24px; }
-  #cursor-dot, #cursor-ring { display: none !important; }
-  body { cursor: auto !important; }
+/* ===============================
+   CLEAN RESPONSIVE SYSTEM (FIXED)
+   =============================== */
+
+/* Prevent horizontal cut / half screen issue */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-
-@media (max-width: 768px) {
-  #home {
-    padding: 90px 20px 60px;
-  }
+/* Tablet layout */
+@media (max-width: 1024px) {
 
   .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-desc,
+  .hero-btns,
+  .hero-stats {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  #about .about-grid,
+  .resume-cols,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-grid,
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+
+  section {
+    padding: 80px 20px;
+  }
+
+  #navbar {
+    padding: 14px 20px;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .hero-h1 {
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .hero-image-wrap {
-    transform: scale(0.9);
+  .hero-img-outer {
+    width: min(260px, 80vw);
+    height: min(260px, 80vw);
+  }
+
+  .projects-grid,
+  .achievements-grid,
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  footer {
+    padding: 36px 20px;
+  }
+
+  #cursor-dot,
+  #cursor-ring {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto !important;
   }
 }

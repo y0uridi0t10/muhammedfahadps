@@ -3,6 +3,7 @@
    Full GSAP + ScrollTrigger animations
    ============================================= */
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── GSAP REGISTRATION ────────────────────────
