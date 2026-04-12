@@ -261,6 +261,13 @@ document.querySelectorAll('.rot').forEach(el => {
         tl.to(char, { y: 0, opacity: 1, duration: 0.06, ease: 'power2.out' }, 0.1 + i * 0.018);
       });
     }
+     const h2 = document.querySelector('.hero-h2');
+    if (h2) {
+      h2.querySelectorAll('.char').forEach((char, i) => {
+        tl.to(char, { y: 0, opacity: 1, duration: 0.06, ease: 'power2.out' }, 0.1 + i * 0.018);
+      });
+    }
+
 
     tl.to('.hero-desc', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0.9)
       .to('.hero-btns', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 1.05)

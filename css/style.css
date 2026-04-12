@@ -371,6 +371,18 @@ body.cursor-click #cursor-dot {
   margin-bottom: 14px;
   overflow: hidden;
 }
+.hero-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 5.5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.hero-h2 .accent { color: var(--orange); }
+.hero-h2 .line { overflow: hidden; display: block; }
 .hero-h1 .accent { color: var(--orange); }
 .hero-h1 .line { overflow: hidden; display: block; }
 /* Split char animation */
