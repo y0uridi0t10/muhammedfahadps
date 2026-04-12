@@ -1357,3 +1357,65 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* =============================================
+   MOBILE OVERFLOW FIX (SAFE PATCH)
+   ============================================= */
+
+@media (max-width: 768px) {
+
+  /* Prevent any horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+   * {
+    animation-duration: 1s !important;
+  }
+  /* Fix hero layout */
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  /* Reduce padding */
+  #home {
+    padding: 100px 20px 60px;
+  }
+
+  /* Fix typewriter overflow */
+  .typewriter-text {
+    white-space: normal;
+    width: 100%;
+    border-right: none;
+    animation: none;
+    text-align: center;
+  }
+
+  /* Fix long headings */
+  .hero-h1,
+  .hero-h2 {
+    word-break: break-word;
+  }
+
+  /* Prevent image overflow */
+  .hero-img-outer {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  /* Fix badge overflow */
+  .hero-badge {
+    right: 0;
+    left: 0;
+    margin: auto;
+    bottom: -20px;
+  }
+
+  /* Disable heavy background elements (optional but recommended) */
+  .hero-orb-1,
+  .hero-orb-2 {
+    display: none;
+  }
+
+}
