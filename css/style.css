@@ -509,11 +509,11 @@ body.cursor-click #cursor-dot {
 
 /* Hero image */
 .hero-image-wrap {
+  min-height: 260px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
 }
 .hero-img-outer {
   width: clamp(180px, 35vw, 340px);
@@ -630,8 +630,7 @@ body.cursor-click #cursor-dot {
 
 .rot {
   display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
+  min-width: 180px; /* lock space */
 }
 /* =============================================
    SECTIONS COMMON
@@ -1417,6 +1416,10 @@ img {
     display: none;
   }
 
+   .hero-inner {
+    grid-template-columns: 1fr !important;
+  }
+
 }
 
 
@@ -1521,4 +1524,22 @@ img, video, canvas {
     transform: none;
     box-shadow: none;
   }
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#home {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -218,34 +218,26 @@ document.querySelectorAll('.rot').forEach(el => {
   const texts = el.getAttribute('data-text').split(',');
   let i = 0;
 
-  // initial text
   el.textContent = texts[0].trim();
 
-  function animateText() {
+  setInterval(() => {
     i = (i + 1) % texts.length;
 
-    // animate out (shrink to left)
     gsap.to(el, {
-      width: 0,
-      duration: 0.5,
-      ease: "power2.in",
+      opacity: 0,
+      y: 10,
+      duration: 0.3,
       onComplete: () => {
-        // change text
         el.textContent = texts[i].trim();
-
-        // reset width to auto (but hidden)
-        gsap.set(el, { width: "auto" });
-
-        // get full width
-        const w = el.offsetWidth;
-
-        // start from 0 again
         gsap.fromTo(el,
-          { width: 0 },
-          { width: w, duration: 0.7, ease: "power2.out" }
+          { opacity: 0, y: -10 },
+          { opacity: 1, y: 0, duration: 0.4 }
         );
       }
     });
+
+  }, 2500);
+});
   }
 
   // initial reveal

@@ -37,6 +37,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 <script src="./js/main.js"></script>
 <script>
+ gsap.set('.hero-image-wrap', { opacity: 0, x: 40 }); 
 document.addEventListener("DOMContentLoaded", () => {
   if (location.hostname !== "localhost") {
     const s = document.createElement("script");
@@ -154,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </span>
   </div>
 
-      <p class="hero-desc">
+      <p class="hero-desc" >
         Electrical and Electronics Engineer and Operations Manager with a strong foundation in technical operations and ASNT-certified inspection practices. Passionate about teaching, mentoring, and applying technology to create meaningful, real-world impact.
       </p>
 
@@ -378,22 +379,25 @@ document.addEventListener("DOMContentLoaded", () => {
           Education
         </div>
         <div class="timeline">
+
           <div class="tl-item"s>
             <div class="tl-date">2025 – 2027</div>
             <div class="tl-role">MCA in Cyber Security</div>
             <div class="tl-org">Jain Online</div>
           </div>
+
           <div class="tl-item">
             <div class="tl-date">2025</div>
             <div class="tl-role">Advanced Diploma in Petroleum Operation & Quality Management</div>
-
             <div class="tl-org">Axionz Global Pvt Ltd, Cochin</div>
           </div>
+
           <div class="tl-item">
             <div class="tl-date">2020 – 2024</div>
             <div class="tl-role">B.Tech in Electrical and Electronics Engineering</div>
             <div class="tl-org">Adi Shankara Institute of Engineering and Technology</div>
           </div>
+          
           <div class="tl-item">
             <div class="tl-date">2020</div>
             <div class="tl-role">Higher Secondary (CBSE)</div>
