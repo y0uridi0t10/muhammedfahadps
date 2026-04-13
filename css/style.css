@@ -483,10 +483,10 @@ body.cursor-click #cursor-dot {
 /* Name headings — smaller & tighter than original */
 .hero-h1 {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(1.2rem, 4vw, 3rem);
-  font-weight: 800;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 750;
   line-height: 1.1;
-  letter-spacing: -0.04em;
+  letter-spacing: +10.5em;
   color: #fff;
   margin-bottom: 14px;
   overflow: hidden;
