@@ -358,7 +358,7 @@ document.querySelectorAll('.rot').forEach(el => {
         opacity: 1, x: 0,
         duration: 0.7,
         ease: 'power3.out',
-        scrollTrigger: { trigger: item, start: 'top 88%', toggleActions: 'play none none none' }
+        scrollTrigger: { trigger: item, start: 'top 90%', toggleActions: 'play none none none' }
       }
     );
   });
