@@ -612,18 +612,18 @@ body.cursor-click #cursor-dot {
 /* Stats row below buttons */
 .hero-stats {
   display: flex;
-  gap: 48px;
+  gap: 32px;
   padding-top: 40px;
   margin-top: 40px;
   border-top: 1px solid var(--border);
-  opacity: 0;
+  opacity: 1;
 }
 .stat-num {
   font-family: 'Syne', sans-serif;
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 750;
   color: var(--orange);
-  line-height: 1;
+  line-height: .8;
 }
 .stat-label {
   font-size: 0.75rem;
