@@ -35,17 +35,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-<script src="./js/main.js"></script>
+
+<!-- Vercel Analytics (production only) -->
 <script>
- gsap.set('.hero-image-wrap', { opacity: 0, x: 40 }); 
-document.addEventListener("DOMContentLoaded", () => {
-  if (location.hostname !== "localhost") {
-    const s = document.createElement("script");
-    s.src = "/_vercel/insights/script.js";
-    document.body.appendChild(s);
-  }
-});
+  document.addEventListener("DOMContentLoaded", () => {
+    if (location.hostname !== "localhost" && location.protocol !== "file:") {
+      const s = document.createElement("script");
+      s.src = "/_vercel/insights/script.js";
+      document.body.appendChild(s);
+    }
+  });
 </script>
+
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -117,19 +118,19 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="hero-inner">
     <!-- Text -->
     <div>
-      <div class="hero-tag"><!-- Text --></div>
+      <div class="hero-tag"></div>
       <h2 class="hero-h2">
         <span class="typewriter-wrap">
-         <span class="char">H</span>
-         <span class="char">i</span>
-         <span class="char">, </span>
-         <span class="char"> </span>
-         <span class="char">I</span>
-         <span class="char">'</span>
-         <span class="char">m</span>
+          <span class="char">H</span>
+          <span class="char">i</span>
+          <span class="char">,</span>
+          <span class="char">&nbsp;</span>
+          <span class="char">I</span>
+          <span class="char">'</span>
+          <span class="char">m</span>
         </span>
-        </h2>
-        <h1 class="hero-h1">
+      </h2>
+      <h1 class="hero-h1">
         <span class="line accent text-3xl md:text-5xl">
           <span class="char">M</span>
           <span class="char">u</span>
@@ -150,12 +151,12 @@ document.addEventListener("DOMContentLoaded", () => {
       </h1>
 
       <div class="typewriter-wrap">
-  <span class="rot" 
-        data-text="Electrical & Electronics Engineer,ASNT Level II Certified,Primavera P6 Certified,Python Developer,Tutor">
-  </span>
-  </div>
+        <span class="rot"
+              data-text="Electrical & Electronics Engineer,ASNT Level II Certified,Primavera P6 Certified,Python Developer,Tutor">
+        </span>
+      </div>
 
-      <p class="hero-desc" >
+      <p class="hero-desc">
         Electrical and Electronics Engineer and Operations Manager with a strong foundation in technical operations and ASNT-certified inspection practices. Passionate about teaching, mentoring, and applying technology to create meaningful, real-world impact.
       </p>
 
@@ -341,12 +342,11 @@ document.addEventListener("DOMContentLoaded", () => {
           Work Experience
         </div>
 
-    <!--This is the second expereience i had in kuwait-->   
-      <div class="timeline">
+        <div class="timeline">
           <div class="tl-item">
-          <div class="tl-date">June 2025 – Present</div>
-          <div class="tl-role">Operations Manager</div>
-          <div class="tl-org">Future Services, Kuwait</div>
+            <div class="tl-date">June 2025 – Present</div>
+            <div class="tl-role">Operations Manager</div>
+            <div class="tl-org">Future Services, Kuwait</div>
             <ul class="tl-desc">
               <li>Lead end-to-end recruitment operations, including sourcing, selection, visa processing, and deployment.</li>
               <li>Coordinate with clients to meet staffing requirements and ensure timely mobilization.</li>
@@ -355,8 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <li>Conduct training programs to improve team productivity and workflow.</li>
             </ul>
           </div>
-         <!--This is the second expereience i had in kuwait-->
-    
+
           <div class="tl-item">
             <div class="tl-date">Sept 2024 – May 2025</div>
             <div class="tl-role">Documentation & Operations Executive (Remote – India)</div>
@@ -366,11 +365,11 @@ document.addEventListener("DOMContentLoaded", () => {
               <li>Maintained accurate digital records and ensured proper documentation tracking.</li>
               <li>Handled document verification, submission, and compliance through relevant portals.</li>
               <li>Processed Police Clearance Certificates (PCC) and ensured procedural accuracy.</li>
-              <li>Communicated with clients to collect information and provide timely updates.</li>  
+              <li>Communicated with clients to collect information and provide timely updates.</li>
             </ul>
           </div>
         </div>
-      </div>    
+      </div>
 
       <!-- Education -->
       <div>
@@ -380,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="timeline">
 
-          <div class="tl-item"s>
+          <div class="tl-item">
             <div class="tl-date">2025 – 2027</div>
             <div class="tl-role">MCA in Cyber Security</div>
             <div class="tl-org">Jain Online</div>
@@ -397,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="tl-role">B.Tech in Electrical and Electronics Engineering</div>
             <div class="tl-org">Adi Shankara Institute of Engineering and Technology</div>
           </div>
-          
+
           <div class="tl-item">
             <div class="tl-date">2020</div>
             <div class="tl-role">Higher Secondary (CBSE)</div>
@@ -407,6 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   </div>
+
     <!-- Certifications -->
     <div>
       <div class="resume-col-title mt-16">
@@ -845,7 +845,7 @@ function handleFormSubmit(e) {
 }
 </script>
 
-<!-- Main JS -->
+<!-- Main JS — loaded once, at end of body -->
 <script src="js/main.js"></script>
 </body>
 </html>

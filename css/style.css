@@ -631,7 +631,18 @@ body.cursor-click #cursor-dot {
 .rot {
   display: inline-block;
   min-width: 180px; /* lock space */
+  white-space: nowrap;  
+  overflow: hidden;
 }
+
+.particle-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
 /* =============================================
    SECTIONS COMMON
    ============================================= */
@@ -1542,4 +1553,26 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.rot {
+  display: inline-block;
+  min-width: 160px; /* reserve space */
+}
+
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-image-wrap {
+  min-height: 260px;
+}
+
+.hero-img-outer {
+  aspect-ratio: 1 / 1;
+}
+
+body {
+  opacity: 1;
 }
