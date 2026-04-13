@@ -36,6 +36,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 <script src="./js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (location.hostname !== "localhost") {
+    const s = document.createElement("script");
+    s.src = "/_vercel/insights/script.js";
+    document.body.appendChild(s);
+  }
+});
+</script>
 <!-- Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
 </head>

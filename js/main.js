@@ -2,13 +2,16 @@
    FAHAD PORTFOLIO — main.js
    Full GSAP + ScrollTrigger animations
    ============================================= */
-
 document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   // ── GSAP REGISTRATION ────────────────────────
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+  const el = document.getElementById("something");
+if (el) {
+  el.appendChild(child);
+}
   // ── PRELOADER ────────────────────────────────
   const preloader = document.getElementById('preloader');
   const preloaderBar = document.querySelector('.preloader-bar');
