@@ -30,6 +30,11 @@
   --muted: #777;
   --white: #fff;
 }
+/* Remove underline + color from all links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 
 /* =============================================
