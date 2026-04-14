@@ -651,16 +651,18 @@ body.cursor-click #cursor-dot {
 /* Spinning decorative rings around image */
 .hero-img-ring-rotate {
   position: absolute;
+  
   inset: -20px;
-  border-radius: 50%;
+  border-radius: 150% 100%;
+
   border: 1.5px dashed rgba(255,107,0,0.3);
   animation: spinRing 25s linear infinite;
 }
 .hero-img-ring-rotate-2 {
   position: absolute;
   inset: -10px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,107,0,0.1);
+  border-radius: 150% 100%;
+  border: 1.5px dashed rgba(255,107,0,0.3);
   animation: spinRing 18s linear infinite reverse;
 }
 .hero-img-dots {
@@ -668,6 +670,12 @@ body.cursor-click #cursor-dot {
   inset: -24px;
   border-radius: 50%;
   animation: spinRing 30s linear infinite;
+}
+.hero-img-dots-2 {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  animation: spinRing 24s linear infinite reverse;
 }
 .hero-img-dots::before,
 .hero-img-dots::after {
@@ -680,6 +688,19 @@ body.cursor-click #cursor-dot {
 }
 .hero-img-dots::before { top: 0;    left: 50%; transform: translateX(-50%); }
 .hero-img-dots::after  { bottom: 0; left: 50%; transform: translateX(-50%); }
+
+.hero-img-dots-2::before,
+.hero-img-dots-2::after {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--orange);
+}
+.hero-img-dots-2::before { top: 0;    left: 50%; transform: translateX(-50%); }
+.hero-img-dots-2::after  { bottom: 0; left: 50%; transform: translateX(-50%); }
+
 
 @keyframes spinRing {
   from { transform: rotate(0deg); }
